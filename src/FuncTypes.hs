@@ -27,7 +27,7 @@ range :: (V.Unbox a, Fractional a) => Int -> a -> a -> V.Vector a
 range n xMin xMax = V.fromList $ lRange n xMin xMax
 
 woodsSaxon :: Double -> Double -> Double -> Double -> Double
-woodsSaxon r0 a v0 r = v0 / (1.0 + exp (r-r0)/a)
+woodsSaxon r0 a v0 r = (-v0) / (1.0 + exp (r-r0)/a)
 
 woodsSaxonPot :: Int -> Double -> Double -> Double -> Double -> Potential
 woodsSaxonPot n rMax r0 a v0 = let xs = range n 0.0 rMax
