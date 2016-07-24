@@ -1,6 +1,6 @@
 name:                ShellModel
 version:             0.1.0.0
-synopsis:            Solver for the radial Schrödinger equation
+synopsis:            Haskell solver for the radial Schrödinger equation
 description:         Please see README.md
 homepage:            https://github.com/arekfu/ShellModel#readme
 license:             BSD3
