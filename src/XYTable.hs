@@ -1,11 +1,12 @@
 module XYTable
 ( xyTable
+, XYTable()
 , (!)
 ) where
 
 import qualified Data.Vector.Unboxed as V
 
-data XYTable = XYT (V.Vector Double) (V.Vector Double)
+data XYTable = XYT (V.Vector Double) (V.Vector Double) deriving (Show, Eq)
 
 xyTable :: V.Vector Double -> V.Vector Double -> XYTable
 xyTable xs ys = let n = min (V.length xs) (V.length ys)
