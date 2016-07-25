@@ -1,3 +1,5 @@
+{-# LANGUAGE GeneralizedNewtypeDeriving #-}
+
 module FuncTypes
 ( Potential()
 , mkPotential
@@ -10,12 +12,12 @@ module FuncTypes
 import XYTable
 import qualified Data.Vector.Unboxed as V
 
-newtype Potential = Potential XYTable deriving (Show, Eq)
+newtype Potential = Potential XYTable deriving (Show, Eq, Table)
 
 mkPotential :: V.Vector Double -> V.Vector Double -> Potential
 mkPotential xs ys = Potential $ xyTable xs ys
 
-newtype WaveFunction = WaveFunction XYTable deriving (Show, Eq)
+newtype WaveFunction = WaveFunction XYTable deriving (Show, Eq, Table)
 
 mkWaveFunction :: V.Vector Double -> V.Vector Double -> WaveFunction
 mkWaveFunction xs ys = WaveFunction $ xyTable xs ys
